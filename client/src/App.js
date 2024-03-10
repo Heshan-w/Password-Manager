@@ -1,12 +1,16 @@
 import React, { useState } from "react";
+import Axios from "axios";
 
 function App() {
   const [password, setPassword] = useState("");
-  const [webService, setWebService] = useState("");
+  const [title, setWebService] = useState("");
 
-  const handleclick = () => {
-    
-  }
+  const addPassword = () => {
+    Axios.post("http://localhost:3001/addpassword", {
+      password: password,
+      title: title,
+    });
+  };
 
   return (
     <div className="flex flex-col justify-center items-center h-screen bg-slate-500">
@@ -23,9 +27,7 @@ function App() {
         onChange={(event) => setPassword(event.target.value)}
       />
 
-      <button onClick={handleclick}>
-        Add Password 
-      </button>
+      <button onClick={addPassword}>Add Password</button>
     </div>
   );
 }
