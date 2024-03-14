@@ -27,7 +27,7 @@ function App() {
         onChange={(event) => setPassword(event.target.value)}
       />
 
-      <button onClick={addPassword}>Add Password</button>
+      <button onClick={addPassword} className="m-2 p-2 bg-black cursor-pointer text-white">Add Password</button>
     </div>
   );
 }
