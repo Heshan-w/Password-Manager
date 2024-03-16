@@ -52,3 +52,7 @@ app.get("/showpassword", (req, res) => {
     }
   })
 })
+
+app.post("/getpassword", (req, res) => {
+  res.send(decrypt(req.body));
+})
