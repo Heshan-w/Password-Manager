@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Axios from "axios";
 
 function App() {
@@ -11,6 +11,12 @@ function App() {
       title: title,
     });
   };
+
+  useEffect(() => {
+    Axios.get("http://localhost:3001/showpassword").then((response) => {
+      console.log(response.data);
+    })
+  }, [])
 
   return (
     <div className="flex flex-col justify-center items-center h-screen bg-slate-500">
