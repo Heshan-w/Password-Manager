@@ -41,3 +41,14 @@ app.post("/addpassword", (req, res) => {
     }
   );
 });
+
+
+app.get("/showpassword", (req, res) => {
+  db.query("SELECT * FROM passwords;", (err, result) => {
+    if (err) {
+      console.log(err);
+    } else {
+      res.send(result);
+    }
+  })
+})
